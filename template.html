@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>$if(title)$$title$$else$Drone Systems Engineering Course$endif$</title>
+  <meta name="description" content="ArduPilot-Based Drone Design, Configuration and Autonomous Flight Training Course (NQF Level 6)">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Reading Progress Bar -->
+  <div id="progress-bar"></div>
+
+  <!-- Mobile Menu Button -->
+  <button class="menu-toggle" aria-label="Toggle Menu">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="24" height="24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+    </svg>
+  </button>
+
+  <!-- Theme Toggle Button -->
+  <button class="theme-toggle" aria-label="Toggle Dark Mode" title="Switch Theme">
+    <svg class="sun-icon" style="display: none;" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+    </svg>
+    <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+    </svg>
+  </button>
+
+  <!-- Back to Top Button -->
+  <button id="back-to-top" aria-label="Back to Top" title="Back to Top">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="20" height="20">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 15l7-7 7 7" />
+    </svg>
+  </button>
+
+  <!-- Sidebar / Table of Contents -->
+  <aside id="sidebar">
+    <div class="sidebar-logo-container">
+      <img src="logo.jpeg" alt="VUT Logo" class="sidebar-logo">
+      <div class="logo-text">
+        <span class="logo-title">Drone Engineering</span>
+        <span class="logo-subtitle">Vaal University of Technology</span>
+      </div>
+    </div>
+
+    <!-- Interactive TOC Filter -->
+    <div class="toc-search-box">
+      <svg xmlns="http://www.w3.org/2000/svg" class="search-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="16" height="16">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+      </svg>
+      <input type="text" id="toc-search" placeholder="Search chapters, labs, topics..." aria-label="Search Table of Contents">
+    </div>
+
+    <div class="toc-wrapper">
+      <h3>Course Contents</h3>
+      $toc$
+    </div>
+  </aside>
+
+  <!-- Main Wrapper -->
+  <div class="main-wrapper">
+    <!-- Landing Page Showcase Hero -->
+    <header class="landing-hero">
+      <div class="landing-hero-grid">
+        <!-- Left Column: Branding, Title & CTA -->
+        <div class="hero-left">
+          <div class="hero-logo-card">
+            <img src="logo.jpeg" alt="Vaal University of Technology Logo" class="hero-big-logo">
+            <div class="hero-logo-info">
+              <span class="university-name">Vaal University of Technology</span>
+              <span class="department-name">Diploma in Electrical Engineering</span>
+            </div>
+          </div>
+
+          <div class="hero-badge">
+            <span class="pulse-dot"></span>
+            <span>Qualification Level: NQF Level 6 • 14 Weeks</span>
+          </div>
+
+          <h1 class="hero-main-title">Drone Systems Engineering</h1>
+          <p class="hero-main-desc">
+            A comprehensive, project-based engineering curriculum covering multirotor flight physics, hardware assembly, ArduPilot firmware, Mission Planner, sensor calibration, PID tuning, EKF log analysis, MAVLink Python automation, and PySimverse 3D simulation.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#course-information" class="btn-primary cta-btn">
+              <span>Start Training Course</span>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="18" height="18">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </a>
+            <a href="#fpv-video-showcase" class="btn-secondary cta-btn">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="18" height="18">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              <span>Watch FPV Drone Video</span>
+            </a>
+          </div>
+
+          <div class="hero-stats-row">
+            <div class="stat-item">
+              <span class="stat-number">21</span>
+              <span class="stat-text">Theory Chapters</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-item">
+              <span class="stat-number">12</span>
+              <span class="stat-text">Practical Labs</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-item">
+              <span class="stat-number">SITL</span>
+              <span class="stat-text">ArduPilot Simulator</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-item">
+              <span class="stat-number">AI</span>
+              <span class="stat-text">PySimverse & Vision</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column: FPV Video Showcase Player -->
+        <div class="hero-right" id="fpv-video-showcase">
+          <div class="video-card">
+            <div class="video-card-header">
+              <div class="video-status-dot"></div>
+              <span class="video-title">FPV Drone Mechanics & Autonomous Flight Showcase</span>
+            </div>
+            <div class="video-container">
+              <img src="drone_demo.webp" alt="FPV Drone Systems & Autonomous Flight Showcase" class="video-local-media">
+            </div>
+            <div class="video-card-footer">
+              <span>Demonstration: Multirotor Aerodynamics & Autonomous Systems</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Course Objectives Grid Section -->
+      <div class="objectives-section">
+        <h2 class="objectives-title">Course Objectives & Key Learning Outcomes</h2>
+        <div class="objectives-grid">
+          
+          <div class="objective-card">
+            <div class="obj-icon-badge obj-icon-cyan">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="26" height="26">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
+              </svg>
+            </div>
+            <h3>1. Multirotor Physics</h3>
+            <p>Master lift, drag, thrust, weight, torque balance, and motor mixing matrices.</p>
+          </div>
+
+          <div class="objective-card">
+            <div class="obj-icon-badge obj-icon-blue">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="26" height="26">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
+              </svg>
+            </div>
+            <h3>2. Hardware Assembly</h3>
+            <p>Build quadcopters from scratch with DIY FPV Studio virtual DRC verification.</p>
+          </div>
+
+          <div class="objective-card">
+            <div class="obj-icon-badge obj-icon-indigo">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="26" height="26">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 1.343-3 3s1.343 3 3 3 3-1.343 3-3-1.343-3-3-3z" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-2 2 2 2 0 01-2-2v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83 0 2 2 0 010-2.83l.06-.06a1.65 1.65 0 00.33-1.82 1.65 1.65 0 00-1.51-1H3a2 2 0 01-2-2 2 2 0 012-2h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 010-2.83 2 2 0 012.83 0l.06.06a1.65 1.65 0 001.82.33H9a1.65 1.65 0 001-1.51V3a2 2 0 012-2 2 2 0 012 2v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 0 2 2 0 010 2.83l-.06.06a1.65 1.65 0 00-.33 1.82V9a1.65 1.65 0 001.51 1H21a2 2 0 012 2 2 2 0 01-2 2h-.09a1.65 1.65 0 00-1.51 1z" />
+              </svg>
+            </div>
+            <h3>3. Sensor Calibration</h3>
+            <p>Perform 6-position accelerometer, compass, radio, and power module calibrations.</p>
+          </div>
+
+          <div class="objective-card">
+            <div class="obj-icon-badge obj-icon-purple">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="26" height="26">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
+              </svg>
+            </div>
+            <h3>4. PID Tuning</h3>
+            <p>Tune rate and attitude control loops manually and using ArduPilot AutoTune.</p>
+          </div>
+
+          <div class="objective-card">
+            <div class="obj-icon-badge obj-icon-emerald">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="26" height="26">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z" />
+              </svg>
+            </div>
+            <h3>5. EKF & Log Analysis</h3>
+            <p>Diagnose sensor health, vibration levels, and EKF variance in Mission Planner.</p>
+          </div>
+
+          <div class="objective-card">
+            <div class="obj-icon-badge obj-icon-amber">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="26" height="26">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+              </svg>
+            </div>
+            <h3>6. MAVLink & Python</h3>
+            <p>Program autonomous waypoint missions using Python and DroneKit API.</p>
+          </div>
+
+          <div class="objective-card">
+            <div class="obj-icon-badge obj-icon-rose">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="26" height="26">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+              </svg>
+            </div>
+            <h3>7. PySimverse AI</h3>
+            <p>Simulate OpenCV vision target tracking and multi-drone swarms in 3D.</p>
+          </div>
+
+          <div class="objective-card">
+            <div class="obj-icon-badge obj-icon-teal">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="26" height="26">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 21v-4m0 0V5a2 2 0 012-2h6.5l1 1H21l-3 6 3 6h-8.5l-1-1H5a2 2 0 00-2 2zm9-13.5V9" />
+              </svg>
+            </div>
+            <h3>8. Capstone Flight</h3>
+            <p>Design, fly, and analyze autonomous missions with evidence-based log reporting.</p>
+          </div>
+
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main>
+      $body$
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <p>© Vaal University of Technology • Diploma in Electrical Engineering</p>
+      <p class="footer-sub">ArduPilot • MAVLink • Mission Planner • PySimverse 3D Simulator</p>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+  <script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+    
+    document.addEventListener("DOMContentLoaded", async () => {
+      const mermaidPres = document.querySelectorAll('pre.mermaid');
+      mermaidPres.forEach((pre) => {
+        const code = pre.querySelector('code');
+        if (code) {
+          const div = document.createElement('div');
+          div.className = 'mermaid';
+          div.textContent = code.textContent;
+          pre.replaceWith(div);
+        }
+      });
+      
+      mermaid.initialize({ 
+        startOnLoad: true,
+        theme: document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default'
+      });
+      
+      const themeToggle = document.querySelector('.theme-toggle');
+      if (themeToggle) {
+        themeToggle.addEventListener('click', () => {
+          setTimeout(() => {
+            location.reload();
+          }, 100);
+        });
+      }
+    });
+  </script>
+</body>
+</html>
