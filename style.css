@@ -248,10 +248,10 @@ aside a.active {
 
 .landing-hero-grid {
   display: grid;
-  grid-template-columns: 1.2fr 0.95fr;
+  grid-template-columns: 1fr 1.15fr;
   gap: 3rem;
   align-items: center;
-  max-width: 1200px;
+  max-width: 1280px;
 }
 
 /* Hero Left: Big Logo, Titles & CTA */
@@ -466,7 +466,7 @@ aside a.active {
 
 .video-container {
   position: relative;
-  padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+  padding-bottom: 56.25%; /* True 16:9 Aspect Ratio */
   height: 0;
   overflow: hidden;
   background: #000000;
@@ -478,7 +478,7 @@ aside a.active {
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   margin: 0 !important;
 }
 
