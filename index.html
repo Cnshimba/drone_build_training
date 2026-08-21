@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -9,6 +9,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+  <script>mermaid.initialize({ startOnLoad: true });</script>
 </head>
 <body>
 
@@ -10470,18 +10472,20 @@ graph TD
     O4 --&gt; R4[Verify parameter]
     Start --&gt; O5[FC orientation wrong]
     O5 --&gt; R5[Check AHRS_ORIENTATION]</code></pre>
-      <h3 id="drone-drifts-in-loiter">Drone Drifts in Loiter</h3>
-      <p>```mermaid %%{init: {‘theme’:‘base’, ‘themeVariables’:
-      {‘primaryColor’:‘#ffffff’, ‘primaryTextColor’:‘#000000’,
-      ‘primaryBorderColor’:‘#000000’, ‘lineColor’:‘#000000’,
-      ‘tertiaryColor’:‘#ffffff’}}}%% graph TD Start<a
-      href="#drone-drifts-in-loiter">Drone drifts in Loiter</a> –&gt;
-      O1[GPS quality] O1 –&gt; R1[Check sat count, HDOP] Start –&gt;
-      O2[Compass] O2 –&gt; R2[Recalibrate, check mast height] Start
-      –&gt; O3[EKF] O3 –&gt; R3[Check variance, lane switching] Start
-      –&gt; O4[Vibration] O4 –&gt; R4[Balance props, check motor
-      bearings] ## Appendix J: Curated Video &amp; Visual Resource
-      Library</p>
+            <h3 id="drone-drifts-in-loiter">Drone Drifts in Loiter</h3>
+      <div class="mermaid">
+%%{init: {'theme':'base', 'themeVariables': {'primaryColor':'#ffffff', 'primaryTextColor':'#000000', 'primaryBorderColor':'#000000', 'lineColor':'#000000', 'tertiaryColor':'#ffffff'}}}%%
+graph TD
+  Start([Drone drifts in Loiter])
+  Start --> O1[GPS quality]
+  O1 --> R1[Check sat count, HDOP]
+  Start --> O2[Compass]
+  O2 --> R2[Recalibrate, check mast height]
+  Start --> O3[EKF]
+  O3 --> R3[Check variance, lane switching]
+  Start --> O4[Vibration]
+  O4 --> R4[Balance props, check motor bearings]
+      </div>
       <p>This library provides a curated collection of high-quality
       educational video tutorials, playlist walkthroughs, and visual
       demonstrations aligned with the 21 chapters of this course.
